@@ -1,0 +1,7 @@
+JobCategory:
+   developers_category:
+      Title: Developers Category
+      URLSegment: developers-test-url
+Member:
+   testmember:
+      FirstName: Test Member

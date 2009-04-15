@@ -1,0 +1,19 @@
+Permission:
+   reference_edit_permission:
+      Code: EDIT_ALL_REFERENCES
+Group:
+   reference_editors:
+      Title: Reference Editors
+      Permissions: =>Permission.reference_edit_permission
+Member:
+   reference_editor:
+      FirstName: Reference Editor
+      Groups: =>Group.reference_editors
+   reference_owner:
+      FirstName: Reference Owner
+   random_user:
+      FirstName: Random User
+Reference:
+   reference1:
+      Title: Reference 1
+      Developer: =>Member.reference_owner
