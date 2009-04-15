@@ -1,0 +1,19 @@
+# Installation
+(automatisiert über das installer script)
+
+# Alternative Installation (für internes testing)
+1. Erstelle _ss_environment.php im webroot
+<?php
+define('SS_ENVIRONMENT_TYPE', 'dev');
+define('SS_ENVIRONMENT_STYLE', 'single');
+define('SS_ENVIRONMENT_ID', 'ssbook_jobvermittlung');
+ 
+define('SS_DATABASE_SERVER', 'localhost');
+define('SS_DATABASE_USERNAME', '');
+define('SS_DATABASE_PASSWORD', ');
+
+define('SS_DEFAULT_ADMIN_USERNAME', 'admin');
+define('SS_DEFAULT_ADMIN_PASSWORD', 'password');
+?>
+
+2. Importiere den Datenbank-Dump im webroot: database.sql.gz
