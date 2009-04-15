@@ -1,0 +1,19 @@
+body,
+#top #MainMenu .current {
+	background: #61DF7E;
+}
+#top,
+#bottom,
+#left h2, 
+#contentPanel h2 {
+	background: #277F4C;
+}
+* {
+	font-family: 'Georgia';
+}
+#top #MainMenu a {
+	font-family: 'Georgia';
+}
+#treepanes h2 img {
+	display: none;
+}
