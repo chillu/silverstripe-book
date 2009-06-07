@@ -43,18 +43,10 @@ class Developer extends Member {
 	);
 	
 	static $field_labels = array(
-		'Introduction' => 'Kurzbeschreibung',
-		'Region' => 'Region',
-		'Skills.Title' => 'Fähigkeiten',
-		'Skills' => 'Fähigkeiten',
-		'References' => 'Referenzen',
+		'Skills.Title' => 'Skills'
 	);
 	
 	static $default_sort = 'FirstName ASC';
-	
-	static $singular_name = 'Entwickler';
-	
-	static $plural_name = 'Entwickler';
 	
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
@@ -77,7 +69,7 @@ class Developer extends Member {
 				)
 			)
 		);
-		$tagField = new TagField('Skills', 'Fähigkeiten');
+		$tagField = new TagField('Skills', 'Skills');
 		$tagField->setTagTopicClass('Developer');
 		$fields->push($tagField);
 		return $fields;
@@ -134,7 +126,7 @@ class Developer extends Member {
 	public function Link() {
 		$profilePage = DataObject::get_one(
 			'CollectionPage',
-			'URLSegment = "entwickler"'
+			'URLSegment = "developers"'
 		);
 		if(!$profilePage) return false;
 		

@@ -7,7 +7,7 @@ class JobCategoryHolder extends Page {
 		'JobCategory'
 	);
 	
-	static $singular_name = 'Jobkategorien Übersicht';
+	static $singular_name = 'Jobcategory Overview';
 	
 }
 

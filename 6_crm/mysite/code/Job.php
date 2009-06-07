@@ -22,29 +22,21 @@ class Job extends DataObject {
 	);
 	
 	static $field_labels = array(
-		'Title' => 'Titel',
-		'Description' => 'Beschreibung',
-		'Location' => 'Ort',
-		'ExpiryDate' => 'Enddatum',
+		'Title' => 'Title',
+		'Description' => 'Description',
+		'Location' => 'Location',
+		'ExpiryDate' => 'Expiry Date',
 		'Author' => 'Author',
-		'JobCategory.Title' => 'Jobkategorie'
+		'JobCategory.Title' => 'Job Category'
 	);
-	
-	static $singular_name = 'Job';
-	
-	static $plural_name = 'Jobs';
 	
 	function onBeforeWrite() {
 		if(!$this->ID) {
-			// Alle Abonnenten benachrichtigen 
-		   // wenn der Job zum ersten Mal gespeichert wird
-			// (also die ID noch nicht gesetzt ist)
 			$category = $this->JobCategory();
 			$this->notifySubscribers(
 				$category->Subscribers()
 			);	
 			
-			// Autor speichern
 			$currentMember = Member::currentMember();
 			if($currentMember) {
 				$this->AuthorID = $currentMember->ID;
@@ -68,9 +60,9 @@ class Job extends DataObject {
 	protected function notifySubscribers($members) {
 		if($members) foreach($members as $member) {
 			$body = "
-				<p>Hallo {$member->FirstName}!</p>
+				<p>Hi {$member->FirstName}!</p>
 				<p>
-				 Ein neues Job-Posting ist verfügbar unter:
+				 A new job posting is available at the following URL:
 				 {$this->Link()}
 				</p>
 			";
@@ -78,7 +70,7 @@ class Job extends DataObject {
 			$email = new Email(
 				Email::getAdminEmail(),
 				$member->Email,
-				'Benachrichtigung Jobangebot',
+				'Job Posting Notification',
 				$body
 			);
 			$email->send();	

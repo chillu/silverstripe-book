@@ -1,7 +1,7 @@
 <?php
 class CommunityAdmin extends ModelAdmin {
 
-	protected static $managed_models = array(
+	static $managed_models = array(
 		'Developer',
 		'Skill',
 		'Reference',
