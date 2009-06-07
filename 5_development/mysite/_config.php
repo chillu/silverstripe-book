@@ -36,11 +36,6 @@ Security::setDefaultAdmin('admin', 'password');
 // Theme should be located in /themes/<themename> (Default folder: '/themes/mysite')
 SSViewer::set_theme('mysite');
 
-// Enable page translation
-Translatable::enable();
-Translatable::set_default_lang('de');
-i18n::set_locale('de_DE');
-
 // Add rules for CommunityAdmin interface
 Director::addRules(100, array(
 	'admin/community' => 'CommunityAdmin',
