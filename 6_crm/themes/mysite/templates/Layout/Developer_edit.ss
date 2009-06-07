@@ -9,27 +9,27 @@
 
 		<% control currentRecord %>
 
-			<h3>Referenzen</h3>
+			<h3>References</h3>
 			<% if References %>
 			<ul class="referenceItems">
 			<% control References %>
 				<li>
 					<a href="$URL">$Title</a>&nbsp;
-					<a href="referenzen/Reference/$ID/edit">
-						(editieren)
+					<a href="references/Reference/$ID/edit">
+						(edit)
 					</a>
 				</li>
 			<% end_control %>
 			</ul>
 			<% else %>
-				<p class="message">Keine Referenzen gefunden</p>
+				<p class="message">No References found</p>
 			<% end_if %>
 			
 		<% end_control %>
 		
 		<p>
-			<a href="referenzen/Reference/add">
-				Referenz hinzufügen
+			<a href="references/Reference/add">
+				Add Reference
 			</a>
 		</p>
 	

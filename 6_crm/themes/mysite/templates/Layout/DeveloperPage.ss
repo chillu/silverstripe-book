@@ -8,7 +8,7 @@
 		$Form
 		
 		<% if Developers %>	
-		<h3>Entwickler</h3>
+		<h3>Developers</h3>
 		<ul class="developers">
 		<% control Developers %>	
 			<li>

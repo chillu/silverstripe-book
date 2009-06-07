@@ -14,5 +14,5 @@
 	
 		$Content
 		
-		<p><a href="$CurrentJob.JobCategory.Link">Zur&uuml;ck zur Kategorie</a></p>
+		<p><a href="$CurrentJob.JobCategory.Link">Back to category</a></p>
 </div>
