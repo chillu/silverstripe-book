@@ -21,29 +21,29 @@
 				<% if MemberIsSubscribed %> 
 					<strong>
 					  <a href="{$Link}unsubscribe">
-					    Sie erhalten neue Jobangebote per Email 
-					    - abbestellen?
+						Your are currently receiving new job postings
+						by email postings – unsubscribe?
 					  </a>
 					</strong>
 				<% else %>
 					<strong>
 					  <a href="{$Link}subscribe">
-					    Senden Sie mir neue Jobangebote in dieser 
-					    Kategorie per Email
+					    Your are currently receiving new job postings
+						by email postings – unsubscribe?
 					  </a>
 					</strong>
 				<% end_if %>
 			</p>
 		<% end_if %>
 
-		<h2>Neuen Job eintragen</h2>
+		<h2>Create a new job posting</h2>
 		<% if CurrentMember %>
 			$Form
 		<% else %>
 			<p>
-				Sie müssen eingeloggt sein um einen Job einzutragen:
-				<a href="Security/login">Login</a> oder 
-				<a href="registrieren">Registrieren</a>
+				You must be logged-in to create new job postings
+				<a href="Security/login">Login</a> or 
+				<a href="register">Register</a>
 			</p>
 		<% end_if %>
 		

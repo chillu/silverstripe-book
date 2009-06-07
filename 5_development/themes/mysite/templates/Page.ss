@@ -24,7 +24,7 @@
 	<div id="Container">
 		<div id="Header">
 	   		<h1>Silverstripe Usergroup</h1>
-	    	<p>Community, Jobvermittlung und mehr</p>
+	    	<p>Community, Jobs and more</p>
 		</div>
 		
 		<div id="Navigation">
