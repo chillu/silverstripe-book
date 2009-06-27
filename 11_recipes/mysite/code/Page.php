@@ -59,15 +59,15 @@ class Page extends SiteTree {
 			array(
 				new NumericField(
 					'ContextNavMaxPages', 
-					'Max. Seiten (minimum: 5)'
+					'Maximum number of pages to display (default: 10)'
 				),
 				new TextField(
 					'ContextNavKeywords', 
-					'Stichworte (getrennt durch Komma)'
+					'Keywords (comma separated)'
 				),
 				new CheckboxSetField(
 					'ContextNavTags', 
-					'Blog Tags (falls vorhanden)',
+					'Blog tags to search for',
 					$tagsMap
 				)
 			)
@@ -93,8 +93,8 @@ class Page extends SiteTree {
 			'Referrer',
 			array(
 				'URL' => 'URL',
-				'IsExternal' => 'Extern?',
-				'ReferrerCount' => 'Anzahl'
+				'IsExternal' => 'External?',
+				'ReferrerCount' => 'Count'
 			)
 		);
 		$tf->setShowPagination(true);
@@ -112,7 +112,7 @@ class Page extends SiteTree {
 			null, // filter
 			'ReferrerCount DESC' // sort
 		);
-		$query->groupby('`Referrer`.URL');
+		$query->groupby('`Referrer`.`URL`');
 		$query->select[] = 'COUNT(*) AS ReferrerCount';
 		$tf->setCustomQuery($query);
 		return $tf;
@@ -273,7 +273,7 @@ class Page extends SiteTree {
 class Page_Controller extends ContentController {
 	function init() {
 		parent::init();
-		
+
 		Requirements::themedCSS("layout");
 		Requirements::themedCSS("typography");
 		Requirements::themedCSS("form");
@@ -289,10 +289,10 @@ class Page_Controller extends ContentController {
 	
 	function SearchForm() {
 		$fields = new FieldSet(
-			new TextField("Search", "Suche")
+			new TextField("Search", false)
 		);
 		$actions = new FieldSet(
-			new FormAction('results', 'Suche')
+			new FormAction('results', 'Search')
 		);
 		return new SearchForm(
 			$this, 
@@ -303,13 +303,13 @@ class Page_Controller extends ContentController {
 	}
 
 	function results($data, $form){
-		$form->setPageLength(1);
+		$form->setPageLength(3);
 		$results = $form->getResults(null, $data);
 		$searchQueryTitle = $form->getSearchQuery($data);
 		$templateData = array(
 			'Results' => $results,
 			'SearchQueryTitle' => $searchQueryTitle,
-			'Title' => 'Suchergebnisse'
+			'Title' => 'Search Results'
 		);
 		return $this->customise($templateData)->renderWith(
 			array('Page_results', 'Page')
@@ -321,7 +321,7 @@ class Page_BannerImage extends Image {
 	
 	function generateFullWidth($gd) {
 		$gd->setQuality(100);
-		return $gd->croppedResize(760,120);
+		return $gd->croppedResize(768,120);
 	}
 	
 	function generateRightColumn($gd) {
