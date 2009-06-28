@@ -1,4 +1,4 @@
-"KundenNummer","Name","Geburtsdatum","Kategorie"
-11,"John Doe",23.06.1982,"Privatkunde"
-12,"Jane Test",31.12.1999,"Privatkunde"
-13,"Joshua Check",,"Einkäufer"
+"CustomerNumber","Name","DateOfBirth","Category"
+11,"John Doe",06/23/1982,"private customer"
+12,"Jane Test",12/31/1999,"private customer"
+13,"Joshua Check",,"business customer"
