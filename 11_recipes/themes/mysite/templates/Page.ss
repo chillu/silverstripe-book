@@ -9,13 +9,13 @@
 		
 		<!--[if IE 6]>
 			<style type="text/css">
-			 @import url(themes/blackcandy/css/ie6.css);
+			 @import url(themes/mysite/css/ie6.css);
 			</style> 
 		<![endif]-->
 		
 		<!--[if IE 7]>
 			<style type="text/css">
-			 @import url(themes/blackcandy/css/ie7.css);
+			 @import url(themes/mysite/css/ie7.css);
 			</style> 
 		<![endif]-->
 	</head>
