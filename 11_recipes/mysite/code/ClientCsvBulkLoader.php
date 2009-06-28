@@ -2,10 +2,10 @@
 class ClientCsvBulkLoader extends CsvBulkLoader {
 	
 	public $columnMap = array(
-		'KundenNummer' => 'ClientNumber', 
+		'CustomerNumber' => 'ClientNumber', 
 		'Name' => '->importFirstAndLastName', 
-		'Geburtsdatum' => '->importBirthday', 
-		'Kategorie' => 'ClientCategory.Title', 
+		'DateOfBirth' => '->importBirthday', 
+		'Category' => 'ClientCategory.Title', 
 	);
 	
 	public $duplicateChecks = array(
@@ -20,15 +20,8 @@ class ClientCsvBulkLoader extends CsvBulkLoader {
 	);
 	
 	static function importBirthday(&$obj, $val, $record) {
-		$matched = preg_match(
-			'/^([0-9]+)\.([0-9]+)\.([0-9]+)$/', 
-			$val, 
-			$parts
-		);
-		if($matched) {
-			$obj->Birthday = "{$parts[3]}-{$parts[2]}-{$parts[1]}";
-		} else {
-			return false;
+		if($val) {
+			$obj->Birthday = date('Y-m-d',strtotime($val));
 		}
 	}
 	
