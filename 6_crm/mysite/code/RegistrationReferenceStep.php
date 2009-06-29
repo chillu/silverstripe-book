@@ -8,7 +8,7 @@ class RegistrationReferenceStep extends MultiFormStep {
 		$fields->removeByName('DeveloperID');
 		$fields->push(new LiteralField('UsageNote', 
 			"<p>
-				<small>Diese Angaben sind optional.</small>
+				<small>These values are optional.</small>
 			</p>"
 		));
 		return $fields;

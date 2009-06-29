@@ -27,16 +27,24 @@ class Job extends DataObject {
 		'Location' => 'Location',
 		'ExpiryDate' => 'Expiry Date',
 		'Author' => 'Author',
-		'JobCategory.Title' => 'Job Category'
+		'JobCategory.Title' => 'Job category'
 	);
+	
+	static $singular_name = 'Job';
+	
+	static $plural_name = 'Jobs';
 	
 	function onBeforeWrite() {
 		if(!$this->ID) {
+			// Alle Abonnenten benachrichtigen 
+		   // wenn der Job zum ersten Mal gespeichert wird
+			// (also die ID noch nicht gesetzt ist)
 			$category = $this->JobCategory();
 			$this->notifySubscribers(
 				$category->Subscribers()
 			);	
 			
+			// Autor speichern
 			$currentMember = Member::currentMember();
 			if($currentMember) {
 				$this->AuthorID = $currentMember->ID;
@@ -60,9 +68,9 @@ class Job extends DataObject {
 	protected function notifySubscribers($members) {
 		if($members) foreach($members as $member) {
 			$body = "
-				<p>Hi {$member->FirstName}!</p>
+				<p>Hello {$member->FirstName}!</p>
 				<p>
-				 A new job posting is available at the following URL:
+				 A new job posting is available at:
 				 {$this->Link()}
 				</p>
 			";
@@ -70,7 +78,7 @@ class Job extends DataObject {
 			$email = new Email(
 				Email::getAdminEmail(),
 				$member->Email,
-				'Job Posting Notification',
+				'Notification about job offer',
 				$body
 			);
 			$email->send();	

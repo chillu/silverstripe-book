@@ -6,10 +6,10 @@ class RegistrationDetailsStep extends MultiFormStep {
 	function getFields() {
 		$fields = singleton('Developer')->getFrontendFields();
 		$fields->push(new ConfirmedPasswordField('Password', 
-			'Passwort'
+			'Password'
 		));
 		$fields->push(new TagField('Skills', 
-			'Fähigkeiten <small>(getrennt durch Leerzeichen)</small>', 
+			'Skills <small>(separated by spaces)</small>', 
 			null, 
 			'Developer'
 		));
@@ -34,8 +34,8 @@ class RegistrationDetailsStep extends MultiFormStep {
 		);
 		if($existingMember) {
 			$form->sessionMessage(
-				"Diese Email-Addresse ist schon registriert - 
-				bitte verwenden Sie eine andere Addresse",
+				"This email address is already registered, 
+				please choose a different email address",
 				"bad"
 			);
 

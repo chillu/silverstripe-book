@@ -1,9 +1,9 @@
 <?php
 class Skill extends DataObject {
 	
-	static $singular_name = 'Fähigkeit';
+	static $singular_name = 'Skill';
 	
-	static $plural_name = 'Fähigkeiten';
+	static $plural_name = 'Skills';
 	
 	static $db = array(
 		'Title' => 'Varchar(255)', 
@@ -14,7 +14,7 @@ class Skill extends DataObject {
 	);
 	
 	static $field_labels = array(
-		'Title' => 'Titel'
+		'Title' => 'Title'
 	);
 	
 	static $searchable_fields = array(

@@ -43,10 +43,18 @@ class Developer extends Member {
 	);
 	
 	static $field_labels = array(
-		'Skills.Title' => 'Skills'
+		'Introduction' => 'Profile description',
+		'Region' => 'Region',
+		'Skills.Title' => 'Skills',
+		'Skills' => 'Skills',
+		'References' => 'References',
 	);
 	
 	static $default_sort = 'FirstName ASC';
+	
+	static $singular_name = 'Developer';
+	
+	static $plural_name = 'Developers';
 	
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
@@ -126,7 +134,7 @@ class Developer extends Member {
 	public function Link() {
 		$profilePage = DataObject::get_one(
 			'CollectionPage',
-			'URLSegment = "developers"'
+			'URLSegment = "developer"'
 		);
 		if(!$profilePage) return false;
 		

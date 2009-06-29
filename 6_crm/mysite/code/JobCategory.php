@@ -13,9 +13,9 @@ class JobCategory extends Page {
 		'Subscribers' => 'Member' 
 	);
 	
-	static $singular_name = 'Job Category';
+	static $singular_name = 'Job category';
 	
-	static $plural_name = 'Job Categories';
+	static $plural_name = 'Job categories';
 	
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
@@ -64,10 +64,11 @@ class JobCategory_Controller extends Page_Controller {
 	
 	function Form() {
 		$fields = singleton('Job')->getFrontendFields();
+		// Autor" macht nur im CMS Sinn, also entfernen wir es
 		$fields->removeByName('Autor');
 		$fields->removeByName('JobCategoryID');
 		$actions = new FieldSet(
-			new FormAction('doSubmitJob', 'Submit')
+			new FormAction('doSubmitJob', 'Eintragen')
 		);
 		$validator = new RequiredFields(
 			'Title',
@@ -89,7 +90,7 @@ class JobCategory_Controller extends Page_Controller {
 		$job->JobCategoryID = $this->dataRecord->ID;
 		$job->write();
 		$form->sessionMessage(
-			'Form successfully submitted',
+			'Job erfolgreich eingetragen',
 			'good'
 		);
 
@@ -118,7 +119,7 @@ class JobCategory_Controller extends Page_Controller {
 			$this->dataRecord->Jobs(),
 			$this->Link() . 'rss',
 			"Jobs in {$this->dataRecord->Title}",
-			"New Job Postings for SilverStripe Developers",
+			"Neue Jobangebote für Silverstripe Entwickler",
 			'Title',
 			'Description'
 		);

@@ -13,9 +13,13 @@ class Reference extends DataObject implements PermissionProvider {
 		)
 	);
 
+	static $singular_name = 'Reference';
+
+	static $plural_name = 'References';
+
 	static $db = array(
 		'URL' => 'Text', 
-		'Title' => 'Varchar(255)', 
+		'Title' => 'Varchar(200)', 
 	);
 	
 	static $has_one = array(
@@ -25,9 +29,9 @@ class Reference extends DataObject implements PermissionProvider {
 	
 	static $field_labels = array(
 		'URL' => 'URL', 
-		'Title' => 'Titel',
+		'Title' => 'Title',
 		'ScreenshotImage' => 'Screenshot',
-		'DeveloperID' => 'Entwickler',
+		'DeveloperID' => 'Developer',
 	);
 	
 	static $searchable_fields = array(
@@ -64,8 +68,6 @@ class Reference extends DataObject implements PermissionProvider {
 	
 	public function canEdit($member = null) {
 		if(!$member) $member = Member::currentUser();
-		if(!$member) return false;
-
 		return (
 			Permission::checkMember(
 				$member, 
@@ -81,7 +83,7 @@ class Reference extends DataObject implements PermissionProvider {
 	
 	public function providePermissions() {
 		return array(
-			'EDIT_ALL_REFERENCES' => 'Alle Referenzen editieren'
+			'EDIT_ALL_REFERENCES' => 'Edit all references'
 		);
 	}
 	
@@ -90,7 +92,8 @@ class Reference extends DataObject implements PermissionProvider {
 class Reference_ScreenshotImage extends Image {
 	
 	function generateWebsiteThumbnail($gd) {
-		return $gd->resizeByWidth(400);
+		$gd->setQuality(100);
+		return $gd->fittedResize(400,200);
 	}
 	
 }

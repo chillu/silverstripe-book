@@ -28,8 +28,8 @@ class RegistrationMultiForm extends MultiForm {
 		return $this->controller->customise(array(
 			'Form' => false,
 			'Content' => '
-				Danke für Ihre Registrierung! 
-				Sie sind nun eingeloggt.
+				Thank you for registering.
+				You are now logged-in.
 			'
 		))->renderWith('Page');
 	}
