@@ -64,11 +64,10 @@ class JobCategory_Controller extends Page_Controller {
 	
 	function Form() {
 		$fields = singleton('Job')->getFrontendFields();
-		// Autor" macht nur im CMS Sinn, also entfernen wir es
 		$fields->removeByName('Autor');
 		$fields->removeByName('JobCategoryID');
 		$actions = new FieldSet(
-			new FormAction('doSubmitJob', 'Eintragen')
+			new FormAction('doSubmitJob', 'Submit')
 		);
 		$validator = new RequiredFields(
 			'Title',
@@ -90,7 +89,7 @@ class JobCategory_Controller extends Page_Controller {
 		$job->JobCategoryID = $this->dataRecord->ID;
 		$job->write();
 		$form->sessionMessage(
-			'Job erfolgreich eingetragen',
+			'Form successfully submitted',
 			'good'
 		);
 
@@ -119,7 +118,7 @@ class JobCategory_Controller extends Page_Controller {
 			$this->dataRecord->Jobs(),
 			$this->Link() . 'rss',
 			"Jobs in {$this->dataRecord->Title}",
-			"Neue Jobangebote für Silverstripe Entwickler",
+			"New Job Postings for SilverStripe Developers",
 			'Title',
 			'Description'
 		);

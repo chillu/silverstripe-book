@@ -28,8 +28,6 @@ class Reference extends DataObject implements PermissionProvider {
 	);
 	
 	static $field_labels = array(
-		'URL' => 'URL', 
-		'Title' => 'Title',
 		'ScreenshotImage' => 'Screenshot',
 		'DeveloperID' => 'Developer',
 	);
@@ -68,6 +66,8 @@ class Reference extends DataObject implements PermissionProvider {
 	
 	public function canEdit($member = null) {
 		if(!$member) $member = Member::currentUser();
+		if(!$member) return false;
+		
 		return (
 			Permission::checkMember(
 				$member, 
@@ -92,8 +92,7 @@ class Reference extends DataObject implements PermissionProvider {
 class Reference_ScreenshotImage extends Image {
 	
 	function generateWebsiteThumbnail($gd) {
-		$gd->setQuality(100);
-		return $gd->fittedResize(400,200);
+		return $gd->resizeByWidth(400);
 	}
 	
 }

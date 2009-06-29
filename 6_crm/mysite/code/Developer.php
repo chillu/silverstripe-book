@@ -44,10 +44,7 @@ class Developer extends Member {
 	
 	static $field_labels = array(
 		'Introduction' => 'Profile description',
-		'Region' => 'Region',
 		'Skills.Title' => 'Skills',
-		'Skills' => 'Skills',
-		'References' => 'References',
 	);
 	
 	static $default_sort = 'FirstName ASC';
@@ -134,7 +131,7 @@ class Developer extends Member {
 	public function Link() {
 		$profilePage = DataObject::get_one(
 			'CollectionPage',
-			'URLSegment = "developer"'
+			'URLSegment = "developers"'
 		);
 		if(!$profilePage) return false;
 		
