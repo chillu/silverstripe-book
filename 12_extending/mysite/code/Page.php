@@ -25,7 +25,7 @@ class Page extends SiteTree {
 
 		$fields->addFieldsToTab(
 			'Root.Content.Main',
-			new TextField('LegacyURL', 'Alte URL')
+			new TextField('LegacyURL', 'Old URL')
 		);
 		return $fields;
 	}
@@ -43,10 +43,10 @@ class Page_Controller extends ContentController {
 	
 	function SearchForm() {
 		$fields = new FieldSet(
-			new TextField("Search", "Suche")
+			new TextField("Search", "Search")
 		);
 		$actions = new FieldSet(
-			new FormAction('results', 'Suche')
+			new FormAction('results', 'Search Results')
 		);
 		return new SearchForm(
 			$this, 
@@ -63,7 +63,7 @@ class Page_Controller extends ContentController {
 		$templateData = array(
 			'Results' => $results,
 			'SearchQueryTitle' => $searchQueryTitle,
-			'Title' => 'Suchergebnisse'
+			'Title' => 'Search Results'
 		);
 		return $this->customise($templateData)->renderWith(
 			array('Page_results', 'Page')

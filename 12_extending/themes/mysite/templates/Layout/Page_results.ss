@@ -2,9 +2,8 @@
 	<div id="Content">
 		<h2>$Title</h2>
 		<p class="searchQueryTitle">
-			Sie haben nach 
+			You searched for
 			&quot;{$SearchQueryTitle}&quot;
-			gesucht
 		</p>			 
 		<% if Results %>
 		 <ul class="searchResults">
@@ -14,7 +13,7 @@
 					$Title
 				 </a>
 				 <div>$Content.LimitWordCountXML</div>
-				 <a href="$Link">weiterlesen ...</a>
+				 <a href="$Link">read more ...</a>
 			  </li>
 			<% end_control %>
 		 </ul>
@@ -22,12 +21,12 @@
 				<div id="PageNumbers">
 					<% if Results.NotLastPage %>
 						<a class="next" href="$Results.NextLink">
-							N&auml;chste Seite
+							Next page
 						</a>
 					<% end_if %>
 					<% if Results.NotFirstPage %>
 						<a class="prev" href="$Results.PrevLink">
-							Vorherige Seite
+							Previous page
 						</a>
 					<% end_if %>
 					<span>
@@ -39,11 +38,11 @@
 						<% end_if %>
 					<% end_control %>
 					</span>
-					<p>Seite $Results.CurrentPage von $Results.TotalPages</p>
+					<p>Page $Results.CurrentPage of $Results.TotalPages</p>
 				</div>
 			<% end_if %>
 		<% else %>
-			<p>Leider wurden keine Ergebnisse gefunden!</p>
+			<p>No search results found!</p>
 		<% end_if %>					 
 	</div>
 </div>

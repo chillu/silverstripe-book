@@ -1,6 +1,6 @@
 <div id="Sidebar" class="typography">
 	<div id="ContextNav" class="sidebarBox">
-		<h3>Weitere Seiten</h3>
+		<h3>Additional Pages</h3>
 		<ul>
 			<% control ContextNav %>
 			<li><a href="$Link">$Title</a></li>

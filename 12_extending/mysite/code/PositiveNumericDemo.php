@@ -24,6 +24,6 @@ class PositiveNumericDemo extends Controller {
 	}
 	
 	function doSubmit($data, $form) {
-		return "Gültige positive Nummer: " . $data['Number'];
+		return "Valid positive number: " . $data['Number'];
 	}
 }
