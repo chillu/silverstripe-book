@@ -28,8 +28,8 @@
 				<% else %>
 					<strong>
 					  <a href="{$Link}subscribe">
-					    Your are currently receiving new job postings
-						by email postings – unsubscribe?
+					    Your are currently not receiving new job postings
+						by email. Would you like to subscribe?
 					  </a>
 					</strong>
 				<% end_if %>

@@ -19,7 +19,7 @@ class JobCategoryTest extends FunctionalTest {
 		$this->assertNotContains(
 			'<form id="Form_Form"', 
 			$response->getBody(),
-			'Form doesnt show without valid login'
+			'Form does not show without valid login'
 		);
 		
 		$this->session()->inst_set(
@@ -30,7 +30,7 @@ class JobCategoryTest extends FunctionalTest {
 		$this->assertContains(
 			'<form id="Form_Form"', 
 			$response->getBody(),
-			'Form show for logged in members'
+			'Form show for logged-in members'
 		);
 		
 		$jobData = array(
