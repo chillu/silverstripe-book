@@ -3,14 +3,9 @@
 global $project;
 $project = 'mysite';
 
-global $databaseConfig;
-$databaseConfig = array(
-	"type" => "MySQLDatabase",
-	"server" => "localhost", 
-	"username" => "root", 
-	"password" => "ins3cure", 
-	"database" => "SS_phpinstaller_23",
-);
+global $database;
+$database = "three_11_flash";
+
 
 // Sites running on the following servers will be
 // run in development mode. See
