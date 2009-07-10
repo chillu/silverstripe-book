@@ -4,7 +4,7 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = "three_11";
+$database = "silverstripe_book_11";
 
 // Use _ss_environment.php file for configuration
 // see http://doc.silverstripe.com/doku.php?id=environment-management
