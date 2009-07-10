@@ -4,7 +4,7 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = "three_5";
+$database = "silverstripe_book_5";
 
 
 // Use _ss_environment.php file for configuration
