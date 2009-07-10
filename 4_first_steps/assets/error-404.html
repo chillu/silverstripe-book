@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" ><!-- template /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/themes/blackcandy/templates/Page.ss -->
+
+  <head>
+		<base href="http://localhost/4_first_steps/" />
+		<title>Page not found &raquo; Your Site Name</title>
+		<meta name="generator" http-equiv="generator" content="SilverStripe - http://www.silverstripe.com" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-US"/>
+
+		<link rel="shortcut icon" href="/favicon.ico" />
+		
+		 
+		 
+		 
+		
+		<!--[if IE 6]>
+			<style type="text/css">
+			 @import url(themes/blackcandy/css/ie6.css);
+			</style> 
+		<![endif]-->
+		
+		<!--[if IE 7]>
+			<style type="text/css">
+			 @import url(themes/blackcandy/css/ie7.css);
+			</style> 
+		<![endif]-->
+	<link rel="stylesheet" type="text/css" href="http://localhost/4_first_steps/themes/blackcandy/css/layout.css?m=1241405988" />
+<link rel="stylesheet" type="text/css" href="http://localhost/4_first_steps/themes/blackcandy/css/typography.css?m=1241405988" />
+<link rel="stylesheet" type="text/css" href="http://localhost/4_first_steps/themes/blackcandy/css/form.css?m=1241405988" />
+</head>
+<body>
+<div id="BgContainer">
+	<div id="Container">
+		<div id="Header">
+			<!-- template /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/sapphire/templates/SearchForm.ss -->
+<form id="SearchForm_SearchForm" action="/4_first_steps/page-not-found/SearchForm" method="get" enctype="application/x-www-form-urlencoded">
+	<fieldset>
+		<legend></legend>
+		
+			<div id="Search" class="field text  nolabel"><div class="middleColumn"><input type="text" class="text nolabel" id="SearchForm_SearchForm_Search" name="Search" value="Search" /></div></div>
+		
+		
+			<input class="action" id="SearchForm_SearchForm_action_results" type="submit" name="action_results" value="Search" title="Search" />
+		
+	</fieldset>
+</form>
+
+<!-- end template /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/sapphire/templates/SearchForm.ss -->
+	   		<h1>Your Site Name</h1>
+	    	<p>your site&#39;s tagline here</p>
+		</div>
+		
+		<div id="Navigation">
+			<!-- include /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/themes/blackcandy/templates/Includes/Navigation.ss -->
+<ul>
+ 		  
+  		<li><a href="/4_first_steps/" title="Go to the Home page" class="link"><span>Home</span></a></li>
+   		  
+  		<li><a href="/4_first_steps/jobs/" title="Go to the Jobs page" class="link"><span>Jobs</span></a></li>
+   		  
+  		<li><a href="/4_first_steps/developers/" title="Go to the Developers page" class="link"><span>Developers</span></a></li>
+   		  
+  		<li><a href="/4_first_steps/contact-us/" title="Go to the Contact Us page" class="link"><span>Contact Us</span></a></li>
+   	
+ </ul>
+<!-- end include /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/themes/blackcandy/templates/Includes/Navigation.ss -->
+	  	</div>
+	  	
+	  	<div class="clear"><!-- --></div>
+		
+		<div id="Layout">
+		  <!-- template /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/themes/blackcandy/templates/Layout/Page.ss -->
+<div class="typography">
+	
+			
+	
+	
+		<h2>Page not found</h2>
+	
+		<p>The requested page does not exist.</p>
+		
+		
+	
+</div>
+
+	
+	
+	
+<!-- end template /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/themes/blackcandy/templates/Layout/Page.ss -->
+		</div>
+		
+	   <div class="clear"><!-- --></div>
+	</div>
+	<div id="Footer">
+		<!-- include /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/themes/blackcandy/templates/Includes/Footer.ss -->
+<div class="footerTop">
+	<!-- -->
+</div>
+<p>Copyright &copy; 2007-2008 | Powered by <a href="http://www.silverstripe.com" title="This site runs on the SilverStripe CMS">SilverStripe Open Source CMS</a></p>
+
+<!-- end include /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/themes/blackcandy/templates/Includes/Footer.ss -->
+	</div> 
+</div>
+
+<script type="text/javascript" src="http://localhost/4_first_steps/jsparty/prototype.js?m=1239769292"></script><script type="text/javascript" src="http://localhost/4_first_steps/jsparty/behaviour.js?m=1239769292"></script><script type="text/javascript" src="http://localhost/4_first_steps/jsparty/prototype_improvements.js?m=1239769292"></script><script type="text/javascript" src="http://localhost/4_first_steps/sapphire/javascript/i18n.js?m=1239769286"></script><script type="text/javascript" src="http://localhost/4_first_steps/sapphire/javascript/lang/en_US.js?m=1239769286"></script><script type="text/javascript" src="http://localhost/4_first_steps/sapphire/javascript/Validator.js?m=1239769286"></script><script type="text/javascript">//<![CDATA[
+Behaviour.register({
+	'#SearchForm_SearchForm': {
+		validate : function(fromAnOnBlur) {
+			initialiseForm(this, fromAnOnBlur);
+			
+			
+			var error = hasHadFormError();
+			if(!error && fromAnOnBlur) clearErrorMessage(fromAnOnBlur);
+			
+			return !error;
+		},
+		onsubmit : function() {
+			if(typeof this.bypassValidation == 'undefined' || !this.bypassValidation) return this.validate();
+		}
+	},
+	'#SearchForm_SearchForm input' : {
+		initialise: function() {
+			if(!this.old_onblur) this.old_onblur = function() { return true; } 
+			if(!this.old_onfocus) this.old_onfocus = function() { return true; } 
+		},
+		onblur : function() {
+			if(this.old_onblur()) {
+				// Don't perform instant validation for CalendarDateField fields; it creates usability wierdness.
+				if(this.parentNode.className.indexOf('calendardate') == -1 || this.value) {
+					return $('SearchForm_SearchForm').validate(this);
+				} else {
+					return true;
+				}
+			}
+		}
+	},
+	'#SearchForm_SearchForm select' : {
+		initialise: function() {
+			if(!this.old_onblur) this.old_onblur = function() { return true; } 
+		},
+		onblur : function() {
+			if(this.old_onblur()) {
+				return $('SearchForm_SearchForm').validate(this); 
+			}
+		}
+	}
+});
+
+//]]></script></body>
+</html><!-- end template /Users/jseide/Documents/ssbook_wiley_src/4_first_steps/themes/blackcandy/templates/Page.ss -->

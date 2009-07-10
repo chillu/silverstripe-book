@@ -4,7 +4,7 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = "three_4";
+$database = "silverstripe_book_4";
 
 require_once("conf/ConfigureFromEnv.php");
 
