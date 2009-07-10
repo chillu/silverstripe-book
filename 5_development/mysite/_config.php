@@ -3,6 +3,10 @@
 global $project;
 $project = 'mysite';
 
+global $database;
+$database = "three_5";
+
+
 // Use _ss_environment.php file for configuration
 // see http://doc.silverstripe.com/doku.php?id=environment-management
 require_once("conf/ConfigureFromEnv.php");
