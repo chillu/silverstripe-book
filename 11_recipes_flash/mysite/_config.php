@@ -4,8 +4,9 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = "three_11_flash";
+$database = "silverstripe_book_11_flash";
 
+require_once("conf/ConfigureFromEnv.php");
 
 // Sites running on the following servers will be
 // run in development mode. See
