@@ -27,11 +27,6 @@ SSViewer::set_theme('mysite');
 // Default administrator account for the CMS
 Security::setDefaultAdmin('admin', 'password');
 
-// Enable page translation
-Translatable::enable();
-Translatable::set_default_lang('de');
-i18n::set_locale('de_DE');
-
 // Add rules for CommunityAdmin interface
 Director::addRules(100, array(
 	'admin/community' => 'CommunityAdmin',
