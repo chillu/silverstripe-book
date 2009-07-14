@@ -25,20 +25,4 @@ Authors: Ingo Schommer, Steven Broschart, ISBN: 978-0470681831
   Contains decorators and unit tests, as well as the code from 5_development/ and
   6_crm/ packaged up as a module in the jobs/ folder.
 
-# Installation
-See Chapter 2, "Installation" for details on how to set up SilverStripe.
-Each chapter folder has its own README.txt which details custom installation instructions.
-You'll find a database.sql dump in all folders containing sample data, please import
-through phpMyAdmin or similar MySQL database tools.
-Further installation instructions are available online at:
-http://doc.silverstripe.com/doku.php?id=installation
-
-# Usage
-Ensure that your webserver webroot points to one of the subfolders
-(e.g. "4_first_steps/"), not the root folder of the archive.
-If you use a standard WAMP or MAMP installation, you should be able
-to access the web-based installer through http://localhost/.
-
-# Support
-If you have trouble installing any of the examples, please visit
-the SilverStripe community forums: http://silverstripe.org/forums/
+See README.txt in subfolders for installation instructions
