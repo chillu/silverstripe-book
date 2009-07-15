@@ -30,12 +30,12 @@ class TreeNavMenu extends MovieClip {
 		textStyles.onLoad = Delegate.create(this,onStyleLoaded);
 		var textStylesURL = baseURL + 
 			'mysite/flash/typography.css';
-		debug("Lade " + textStylesURL);
+		debug("Loading " + textStylesURL);
 		textStyles.load(textStylesURL);
 		
 		// 1. load menu
 		var menuXMLURL = baseURL + "FlashTree/xml";
-		debug("Lade " + menuXMLURL);
+		debug("Loading " + menuXMLURL);
 		menuXML.load(menuXMLURL);
 	}
 
