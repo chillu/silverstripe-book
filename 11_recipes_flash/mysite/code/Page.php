@@ -7,7 +7,9 @@ class Page extends SiteTree {
 	static $defaults = array(
 	);
 	
-	static $api_access = true;
+	static $api_access = array(
+		'view' => array('Title', 'Content')
+	);
 
 	
 }
