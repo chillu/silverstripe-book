@@ -2,14 +2,14 @@
 <node>
   <node id="1" label="Home" isBranch="true" classname="Page">
   </node>
-  <node id="2" label="Über uns" isBranch="true" classname="Page">
+  <node id="2" label="About Us" isBranch="true" classname="Page">
   </node>
-  <node id="5" label="Das Team" isBranch="false" classname="Page">
+  <node id="5" label="The Team" isBranch="false" classname="Page">
   	<node id="6" label="Brian " isBranch="true" classname="Page">
   	</node>
   	<node id="7" label="Sam " isBranch="true" classname="Page">
   	</node>
   </node>
-  <node id="3" label="Kontakt" isBranch="true" classname="Page">
+  <node id="3" label="Contact" isBranch="true" classname="Page">
   </node>
 </node>
