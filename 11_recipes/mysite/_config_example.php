@@ -48,4 +48,6 @@ LeftAndMain::set_loading_image(
 	'mysite/images/kiwicmslogo_loading.png'
 );
 LeftAndMain::require_css('mysite/css/kiwicms.css');
+
+BlogEntry::$allow_wysiwyg_editing = true;
 ?>
