@@ -44,3 +44,7 @@ Each subfolder in this repository is effectively a SilverStripe webroot,
 ### Do these examples work for the German book as well?
 
 No, they have been significantly updated and changed - the German book and code examples were tested on an early SilverStripe 2.3 beta version.
+
+### How do I figure out which module versions are used in the example projects?
+
+Dependencies are managed with [http://piston.rubyforge.org](Piston), a small ruby script that copies files from a target repository, in our case `svn.silverstripe.com`. It also creates a small file called `piston.yml` in each checked-out folder, which contains the revision it was last updates, as well as the subversion tree (and version number). For example, the version of blog module used for chapter 6 is in `6_crm/blog/.piston.yml` (`repository_url: http://svn.silverstripe.com/open/modules/blog/tags/0.2.1`).
