@@ -41,10 +41,13 @@ See `README.txt` in subfolders for installation instructions.
 Each subfolder in this repository is effectively a SilverStripe webroot. To install, simply copy `mysite/_config_example.php` to `mysite/_config.php` and adjust the database settings.
 IMPORTANT: Do NOT use the SilverStripe installer (`install.php`), as this will override your `_config.php`, removing any important preferences that might have been pre-set in there.
 
-## Help
+## Helping out
 
 We're hoping to keep these examples "alive" beyond the lifespan of the book.
-This mainly 
+This mainly means keeping the examples working with new SilverStripe releases,
+through testing and compatibility fixes. Extensions/customizations to the examples
+are best kept in forks of this repository, as we strive to keep the book
+content matching the actual code.
 
 
 ## FAQ
