@@ -1,0 +1,35 @@
+{
+	"name": "jQuery-TableSorter",
+	"version": 1.0.3,
+	"author": [
+		"Christian Bach <christian.bach@polyester.se>"
+	],
+	"abstract": "Client-side table sorting with ease!.",
+	"license": "mit, gpl",
+	"distribution_type": "plugin",
+	"requires": {
+		"jQuery": ">= 1.1, < 1.2"
+	},
+	"provides": {
+		"jQuery.TableSorter": {
+			"version": 1.0.3,
+			"file": "jquery.tablesorter.js"
+		},
+		"jQuery.TableSorter.ExtraParsers": {
+			"file": "jquery.tablesorter.extra.parsers.js"
+		},
+		"jQuery.TableSorter.Modify": {
+			"file": "jquery.tablesorter.modify.js"
+		}
+	},
+	"keywords": [
+		"table",
+		"sort"
+	],
+	"stability": "Official",
+	"meta-spec": {
+		"version": 1.3,
+		"url": "http://module-build.sourceforge.net/META-spec-v1.3.html"
+	},
+	"generated_by": "Yehuda Katz"
+}

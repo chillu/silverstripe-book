@@ -1,0 +1,133 @@
+<html id="html">
+<head>
+	<title>Array Plugins Test Suite</title>
+	<link rel="stylesheet" href="../../jquery/test/data/testsuite.css" />
+	<script type="text/javascript" src="../../jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../../jquery/test/data/testrunner.js"></script>
+	<script type="text/javascript" src="jquery.array.js"></script>
+	<script type="text/javascript">
+	test("Requirements",function(){
+		expect(8);
+		ok(jQuery,"jQuery");
+		ok(jQuery.fn.jquery, "jQuery Version: "+jQuery.fn.jquery);
+		ok(Array.prototype.push, "Array.push()");
+		ok(Array.prototype.shift, "Array.shift()");
+		ok(Array.prototype.slice, "Array.slice()");
+		ok(Array.prototype.sort, "Array.sort()");
+		ok(Array.prototype.reverse, "Array.reverse()");
+		ok(jQuery.fn.reverse, "Array Plugins");
+	});
+	
+	module('Array');
+	
+	test("reverse",function(){
+		expect(3);
+		var $lis = $('#testList li');
+		isSet($lis.reverse().get(),q('sixth','fifth','fourth','third','second','first'),'Basic Reverse');
+		isSet($lis.get(),q('first','second','third','fourth','fifth','sixth'),'Non Destructive');
+		$lis.reverse(true);
+		isSet($lis.get(),q('sixth','fifth','fourth','third','second','first'),'Destructive');
+	});
+	
+	test('sort',function(){
+		expect(3);
+		var sortFn = function(a,b){return parseInt(a.innerHTML) - parseInt(b.innerHTML);};
+		var $lis = $('#testList li');
+		isSet($lis.sort(sortFn).get(),q('third','fourth','second','fifth','first','sixth'),'Basic Numeric Sort');
+		isSet($lis.get(),q('first','second','third','fourth','fifth','sixth'),'Non Destructive');
+		$lis.sort(sortFn,true);
+		isSet($lis.get(),q('third','fourth','second','fifth','first','sixth'),'Destructive');
+	});
+	
+	test("randomize",function(){
+		expect(3);
+		var $lis = $('#testList li');
+		// not sure how to test randomize other than to assert that the array is no longer in the same order
+		isNotSet($lis.randomize().get(),q('first','second','third','fourth','fifth','sixth'),'Basic Randomize');
+		isSet($lis.get(),q('first','second','third','fourth','fifth','sixth'),'Non Destructive');
+		$lis.randomize(true);
+		isNotSet($lis.get(),q('first','second','third','fourth','fifth','sixth'),'Destructive');
+	});
+	
+	test("slice",function(){
+		expect(3);
+		var $lis = $('#testList li');
+		isSet($lis.slice(1,4).get(),q('second','third','fourth'),'Basic Slice');
+		isSet($lis.get(),q('first','second','third','fourth','fifth','sixth'),'Non Destructive');
+		$lis.slice(1,4,true);
+		isSet($lis.get(),q('second','third','fourth'),'Destructive');
+	});
+	
+	test("pop",function(){
+		expect(4);
+		var $lis = $('#testList li'), returned = {};
+		isSet($lis.pop(false,returned).get(),q('first','second','third','fourth','fifth'),'Basic Pop');
+		ok($lis[$lis.length-1]==returned.pop,'Popped Element');
+		isSet($lis.get(),q('first','second','third','fourth','fifth','sixth'),'Non Destructive');
+		$lis.pop(true);
+		isSet($lis.get(),q('first','second','third','fourth','fifth'),'Destructive');
+	});
+	
+	test("shift",function(){
+		expect(4);
+		var $lis = $('#testList li'), returned = {};
+		isSet($lis.shift(false,returned).get(),q('second','third','fourth','fifth','sixth'),'Basic Shift');
+		ok($lis[0]==returned.shift,'Shifted Element');
+		isSet($lis.get(),q('first','second','third','fourth','fifth','sixth'),'Non Destructive');
+		$lis.shift(true);
+		isSet($lis.get(),q('second','third','fourth','fifth','sixth'),'Destructive');
+	});
+	
+	test("rotate",function(){
+		expect(4);
+		var $lis = $('#testList li');
+		isSet($lis.rotate().get(),q('second','third','fourth','fifth','sixth','first'),'Basic Rotate');
+		isSet($lis.rotate().rotate().get(),q('third','fourth','fifth','sixth','first','second'),'Double Rotate');
+		isSet($lis.get(),q('first','second','third','fourth','fifth','sixth'),'Non Destructive');
+		$lis.rotate(true);
+		isSet($lis.get(),q('second','third','fourth','fifth','sixth','first'),'Destructive');
+	});
+	
+/**
+ * Asserts that two arrays are NOT the same
+ * Used to test for randomness. Not a good solution.
+ * TODO: Write a better test
+ */
+function isNotSet(a, b, msg) {
+	var ret = true;
+	if ( a && b && a.length == b.length ) {
+		for ( var i in a )
+			if ( a[i] != b[i] )
+				ret = false;
+	} else
+		ret = false;
+	if ( ret )
+		_config.Test.push( [ !ret, msg + " expected: " + b + " result: " + a ] );
+	else 
+		_config.Test.push( [ !ret, msg ] );
+}
+	</script>
+</head>
+
+<body id="body">
+	<h1>Array Plugins Test Suite</h1>
+	<h2 id="banner"></h2>
+	<h2 id="userAgent"></h2>
+	
+	<!-- Test HTML -->
+	<dl style="display:none;">
+	<div id="main" style="display: none;">
+	<ul id="testList">
+		<li id="first">5</li>
+		<li id="second">3</li>
+		<li id="third">1</li>
+		<li id="fourth">2</li>
+		<li id="fifth">4</li>
+		<li id="sixth">6</li>
+	</ul>
+	</div>
+	</dl>
+	
+	<ol id="tests"></ol>
+</body>
+</html>

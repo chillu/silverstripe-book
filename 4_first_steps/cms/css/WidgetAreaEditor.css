@@ -1,0 +1,58 @@
+div.availableWidgetsHolder,
+div.usedWidgetsHolder {
+	width: 49%;
+}
+
+div.availableWidgetsHolder {
+	float: left;
+}
+
+div.usedWidgetsHolder {
+	float: right;
+}
+
+div.usedWidgets {
+	border: 1px #CCC dotted;
+	padding: 5px;
+}
+#NoWidgets {
+	padding: 50px; /* Make this nice and big and easily 'droppable' */
+}
+
+div.usedWidgets div.Widget,
+div.availableWidgets div.Widget {
+	width: 98%;
+	border: 1px solid #ddd;
+	border-top: none;
+	margin-bottom: 5px;
+}
+div.widgetDescription p,
+div.widgetFields {
+	padding: 0 8px;
+	color: #666;
+	font-size: 11px;
+}
+
+p.deleteWidget {
+	margin: 0;
+	height: 22px;
+	line-height: 2.2;
+	font-size: 12px;
+}
+span.widgetDelete {
+	padding-left: 20px;
+	margin-right: 8px;
+	float: right;
+	background: url(../images/delete.gif) no-repeat left center;
+	cursor: pointer;
+}
+div.usedWidgets div.Widget h3,
+div.availableWidgets div.Widget h3 {
+	font-size: 12px;
+	color: #fff;
+	line-height: 1.8;
+	text-indent: 5px;
+	background: #000 url(../images/textures/obar-18.gif);
+	margin: 0;
+	cursor: move;
+}

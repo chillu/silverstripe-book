@@ -1,0 +1,51 @@
+<?php
+/**
+ * This field lets you put an arbitrary piece of HTML into your forms.
+ * 
+ * @package forms
+ * @subpackage fields-dataless
+ */
+class LiteralField extends DatalessField {
+	
+	/**
+	 * @var string $content
+	 */
+	protected $content;
+	
+	function __construct($name, $content) {
+		$this->content = $content;
+		
+		parent::__construct($name);
+	}
+	
+	function FieldHolder() {
+		return is_object($this->content) ? $this->content->forTemplate() : $this->content; 
+	}
+	
+	function Field() {
+		return $this->FieldHolder();
+	}
+  
+	/**
+	 * Sets the content of this field to a new value
+	 * @param string $content
+	 */
+	function setContent($content) {
+		$this->content = $content;
+	}
+	
+	/**
+	 * @return string
+	 */
+	function getContent() {
+		return $this->content;
+	}
+
+	function performReadonlyTransformation() {
+		$clone = clone $this;
+		$clone->setReadonly(true);
+		return $clone;
+	}
+}
+
+?>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>jQuery center plugin</title>
+		<script src="../lib/jquery.js" type="text/javascript"></script>
+		<script src="../lib/jquery.dimensions.js" type="text/javascript"></script>
+		<script src="../lib/jquery.center.js" type="text/javascript"></script>
+		<script src="../jquery.get.js" type="text/javascript"></script>
+		<script src="../lib/functions.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	</head>
+	<body>
+	<div id="general">
+		<div id="all">
+			<h2>jQuery jget Plugin</h2>
+			<h3>Whats for?</h3>
+			<div class="content">
+					<p>
+						This plugin give a simple way to access
+						the query string like a server side
+						language
+					</p>
+			</div>
+			<h3>Example</h3>
+			<div class="content">
+<pre>
+//url http://www.example.com/foo.php?var1=test1&var2=test2
+var out1 = $.get['var1'];
+// out1 = test1
+var out2 = $.get['var2'];
+// out2 = test2
+</pre>
+			</div>
+
+
+		<h3>Test?</h3>
+			<div class="content">
+					<p>
+						You can type a query string appended in the
+						url to see the plugin in action. In firefox with firebug
+						you can see the result in console or a alert in internet
+						explorer or a log in safari.
+					</p>
+			</div>
+
+		</div>
+		<h3>To do</h3>
+			<div class="content">
+					<p>
+						Make a method to return the queryString in object notation
+					</p>
+			</div>
+
+		</div>
+		<div id="footer">
+			Created by <a href="http://blog.alexandremagno.net" target="_blank">Alexandre Magno</a>
+		</div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+###############################################
+User defined forms ("userforms") Module
+###############################################
+
+Maintainer Contact
+-----------------------------------------------
+Will Rossiter (Nickname: wrossiter, willr)
+<will (at) silverstripe (dot) com>
+
+Sean Harvey (Nickname: sharvey, halkyon)
+<sean (at) silverstripe (dot) com>
+
+Requirements
+-----------------------------------------------
+SilverStripe 2.3.0+
+
+Documentation
+-----------------------------------------------
+http://doc.silverstripe.com/doku.php?id=userdefinedform
+
+Installation Instructions
+-----------------------------------------------
+Extract the userforms folder into the top level of your site, and visit
+http://www.mysite.com/dev/build to rebuild the database.

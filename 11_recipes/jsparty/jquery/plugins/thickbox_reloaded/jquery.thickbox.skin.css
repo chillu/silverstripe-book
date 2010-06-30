@@ -1,0 +1,121 @@
+/* Default skin for Thickbox interface */
+
+/* All types */
+
+/* building blocks */
+#tb-dim {
+    background: #0a3049;
+    opacity: .7;
+}
+#tb-loading {
+    background: url(jquery.thickbox.spinner.gif) no-repeat 50% 50%;
+}
+#tb-modal {
+    border: solid #d4dbdf;
+    border-width: 0 1px;
+    background: #fff;
+}
+#tb-modal * {
+    margin: 0;
+    padding: 0;
+    font: 12px/1.3 Arial, Helvetica, Geneva, "sans-serif";
+}
+#tb-content {
+    padding: 13px 19px 0;
+}
+#tb-title {
+    padding: 0 10px 13px 0;
+}
+#tb-close a { /* image replacement */
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 999;
+    overflow: hidden;
+    width: 26px;
+    height: 26px;
+    background: url(/images/button_close.png) no-repeat 5px 5px;
+    line-height: 30px;
+    text-indent: 1000px;
+}
+
+/* round corners */
+#tb-modal .tb-tl, #tb-modal .tb-tr, #tb-modal .tb-br, #tb-modal .tb-bl {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: no-repeat;
+}
+#tb-modal .tb-tl, #tb-modal .tb-tr {
+    top: 0;
+}
+#tb-modal .tb-br, #tb-modal .tb-bl {
+    top: 100%;
+    margin-top: -3px;
+    /*bottom: 0;*/ /* stupid IE 6 borks on that one */
+}
+#tb-modal .tb-tl, #tb-modal .tb-bl {
+    left: -1px;
+}
+#tb-modal .tb-tr, #tb-modal .tb-br {
+    right: -1px;
+}
+#tb-modal .tb-tl {
+    background-image: url(corner_thickbox_tl.png);
+}
+#tb-modal .tb-tr {
+    background-image: url(corner_thickbox_tr.png);
+}
+#tb-modal .tb-br {
+    background-image: url(corner_thickbox_br.png);
+}
+#tb-modal .tb-bl {
+    background-image: url(corner_thickbox_bl.png);
+}
+
+/* Specific types: ajax, confirm, external, image, inline. The modal window belongs to a class of one of these types. */
+
+/* confirm */
+.tb-confirm #tb-content a {
+    color: #666;
+}
+#tb-confirm {
+    float: left;
+}
+#tb-cancel {
+    float: right;
+}
+
+/* external */
+.tb-external #tb-content iframe {
+    padding: 0;
+    width: 100%;
+}
+
+/* image */
+.tb-image #tb-content img {
+    display: block;
+}
+#tb-browse {
+    padding: 12px 0 0;
+    text-align: center;
+}
+#tb-next {
+    float: right;
+}
+#tb-prev {
+    float: left;
+}
+#tb-browse em {
+    font-style: normal;
+}
+
+
+/* IE fixes - WARNING: do not group selectors, otherwise IE 6 will ignore complete rule (because of the + combinator) */
+* html #tb-dim { /* @ IE 6 & IE 7 Quirks Mode */
+    filter: Alpha(Opacity=70);
+}
+*:first-child+html #tb-dim { /* @ IE 7 Standards Mode */
+    filter: Alpha(Opacity=70);
+}
+

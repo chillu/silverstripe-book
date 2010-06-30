@@ -1,0 +1,53 @@
+/* Required style sheet for Thickbox interface */
+
+/* Import skin */
+@import "jquery.thickbox.skin.css";
+
+/* Minimum requirements */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+html>body #tb-dim, html>body #tb-loading, html>body #tb-modal { /* IE 7 should always use fixed positioning, thus override IE 6 hack (also applied by IE 7 in Quirks Mode) with higher specificity */
+    position: fixed;
+}
+#tb-dim {
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+}
+#tb-loading, #tb-modal {
+    top: 50%;
+    left: 50%;
+}
+#tb-loading {
+    z-index: 9999;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+}
+#tb-modal {
+    display: none;
+    z-index: 10000;
+}
+#tb-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+}
+
+/* IE 6 specific */
+* html #tb-dim, * html #tb-loading, * html #tb-modal {
+    position: absolute;
+}
+* html #tb-dim iframe { /* hide selects in IE 6, iframe is not required and not present in IE 7 */
+    width: 100%;
+    height: 100%;
+    filter: Alpha(Opacity=0);
+}

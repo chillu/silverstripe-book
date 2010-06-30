@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="Content-Script-Type" content="text/javascript">
+        <title>jQuery Thickbox Reloaded plugin demo and test page</title>
+        <link rel="stylesheet" href="jquery.thickbox.css" type="text/css" media="screen, projection">
+        <script type="text/javascript" src="jquery-1.1.3.1.pack.js"></script>
+        <script type="text/javascript" src="jquery.thickbox.js"></script>
+
+        <style type="text/css" media="projection, screen">
+            a img {
+                border: 1px solid #525252;
+            }
+            #demo-gallery ul {
+                list-style: none;
+                overflow: hidden; /* containing floats */
+                margin: 0;
+                padding: 0;
+                width: 100%; /* IE auto clear */
+            }
+            #demo-gallery li {
+                float: left;
+                margin: 0 1em 0 0;
+            }
+            #demo-inline #content {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+            $(function() {
+
+                // Thickbox single image
+                $('#demo-single a').thickbox();
+
+                // Thickbox grouped images
+                $('#demo-gallery a').thickbox();
+
+                // Thickbox load from inline
+                $('#demo-inline a').thickbox();
+
+                // Thickbox load content via Ajax
+                $('#demo-ajax a').thickbox({ top: '10', left: '10' }); // Unit defaults to 'px'
+
+                // Thickbox load external
+                $('#demo-external a').thickbox();
+
+                // Overide some default values
+                $.thickbox.defaults({
+                    i18n: { confirm: { what: 'Please confirm', confirm: 'Okay', cancel: 'Back' } }
+                });
+
+                // Thickbox form submit confirm
+                $('#demo-form form').thickbox();
+
+            });
+        </script>
+    </head>
+    <body>
+        <h1>jQuery Thickbox Reloaded plugin demo and test page</h1>
+
+        <div id="demo-single">
+            <h2>Single Image</h2>
+            <p><a href="single.jpg" title="add a title to title attribute (or leave blank)"><img src="single_t.jpg" alt="Show image" width="100" height="75"></a></p>
+        </div>
+
+        <div id="demo-gallery">
+            <h2>Image Gallery</h2>
+            <ul>
+                <li><a href="plant1.jpg" rel="gallery" title="add a title to title attribute (or leave blank)"><img src="plant1_t.jpg" alt="Show image" width="100" height="75"></a></li>
+                <li><a href="plant2.jpg" rel="gallery" title="add a title to title attribute (or leave blank)"><img src="plant2_t.jpg" alt="Show image" width="100" height="75"></a></li>
+                <li><a href="plant3.jpg" rel="gallery" title="add a title to title attribute (or leave blank)"><img src="plant3_t.jpg" alt="Show image" width="100" height="75"></a></li>
+                <li><a href="plant4.jpg" rel="gallery" title="add a title to title attribute (or leave blank)"><img src="plant4_t.jpg" alt="Show image" width="100" height="75"></a></li>
+            </ul>
+        </div>
+        
+        <h2>Select control for testing</h2>
+        <form action="">
+            <div>
+                <select>
+                    <option>Testing IE 6 covering this control</option>
+                </select>
+            </div>
+        </form>
+
+        <div id="demo-inline">
+            <h2>Inline Content</h2>
+            <p><a href="#content" title="Inline Content">Show Thickbox</a></p>
+            <div id="content">
+                <h3>This content was loaded from inside the document</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+        </div>
+
+        <div id="demo-ajax">
+            <h2>Content via Ajax</h2>
+            <p><a href="content.html" title="Ajax">Show Thickbox</a></p>
+        </div>
+
+        <div id="demo-external">
+            <h2>External Content</h2>
+            <p><a href="http://jquery.com" title="External">Show Thickbox</a></p>
+        </div>
+
+        <div id="demo-form">
+            <h2>Form Confirm</h2>
+            <form action="">
+                <fieldset>
+                    <legend>Confirmation</legend>
+                    <input type="hidden" name="was" value="submitted">
+                    <div>Defer form to Thickbox confirm dialog: <input type="submit" value="Go" title="Are you sure?" /></div>
+                </fieldset>
+            </form>
+        </div>
+
+    </body>
+</html>

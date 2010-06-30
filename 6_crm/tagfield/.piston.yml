@@ -1,0 +1,8 @@
+--- 
+format: 1
+handler: 
+  piston:remote-revision: 107341
+  piston:uuid: 467b73ca-7a2a-4603-9d3b-597d59a354a9
+lock: false
+repository_class: Piston::Svn::Repository
+repository_url: http://svn.silverstripe.com/open/modules/tagfield/tags/0.1

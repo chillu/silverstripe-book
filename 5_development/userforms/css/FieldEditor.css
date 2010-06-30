@@ -1,0 +1,208 @@
+/**
+ * User Defined Form Builder CSS
+ *
+ */
+
+/* Add a Field Menu 
+---------------------------------------- */
+.MenuHolder {
+	color: #999;
+	border: 1px solid #ddd;
+	background: #f4f4f4;
+	overflow: hidden;
+	padding: 4px 10px;
+}
+	.MenuHolder h2 {
+		float: left;
+	}
+	
+	.MenuHolder select {
+		float: left;
+		width: 240px;
+		margin: 7px 0 0 8px;
+		font-size: 11px;
+	}
+	
+	.MenuHolder .action {
+		float: left;
+		margin: 7px 0 0 4px;
+		font-size: 11px;
+	}
+	
+/* Options / Settings Area 
+---------------------------------------- */
+.FormOptions {
+	padding: 10px 0 0 0;
+}
+
+/* Field Listing
+---------------------------------------- */	
+#Fields_fields {
+	padding: 10px 0;
+}
+
+	#Fields_fields .EditableFormField {
+		margin: 2px;
+		padding: 3px;
+		border-top: 1px dotted #ccc;
+		overflow: hidden;
+	}
+		#Fields_fields .EditableFormField * {
+			display: inline;
+			vertical-align: middle;
+		}
+		#Fields_fields .EditableFormField .fieldHandler,
+		#Fields_fields .EditableFormField .handle {
+			cursor: move;
+		}
+		#Fields_fields .EditableFormField .fieldInfo {
+			float: left;
+			padding-right: 10px;
+		}
+		#Fields_fields .EditableFormField .fieldActions {
+			float: left;
+			margin-top: 10px;
+		}
+			#Fields_fields .EditableFormField .fieldActions a {
+				padding: 0 5px 5px 20px;
+				font-size: 12px;
+			}
+				#Fields_fields .EditableFormField .moreOptions {
+					background: url(../../cms/images/edit.gif) no-repeat top left;
+				}
+					#Fields_fields .EditableFormField .moreOptions.showing {
+						color: #666;
+						text-decoration: none;
+					}
+				#Fields_fields .EditableFormField .delete {
+					background: url(../../cms/images/delete.gif) no-repeat top left;
+				}
+
+		#Fields_fields .EditableFormField input {
+			width: 250px;
+			margin-left: 0px;
+		}
+	
+		/** Field Options **/
+		
+		#Fields_fields .EditableFormField div.extraOptions {
+			display: block;
+			overflow:hidden;
+			margin: 3px 0px 3px 38px;
+			background-color: #eee;
+			padding: 3px;
+			clear: both;			
+		}
+			#Fields_fields .EditableFormField .extraOptions * {
+				display: block;
+			}
+			
+				#Fields_fields .EditableFormField .extraOptions .handle {
+					float: left;
+					margin-right: 3px;
+				}
+				#Fields_fields .EditableFormField .extraOptions ul {
+					padding: 5px 0;
+				}
+					#Fields_fields .EditableFormField .extraOptions li {
+						padding: 3px 0;
+						overflow: hidden;
+					}
+				#Fields_fields .EditableFormField .extraOptions a {
+					background: none;
+				}
+				#Fields_fields .EditableFormField .extraOptions input {
+					font-size: 11px;
+					padding: 2px;
+					float: left;
+				}
+				#Fields_fields .EditableFormField .extraOptions .deleteOption {
+					width: 20px;
+					margin: 4px 0 0 4px;
+					background: none;
+					height: 20px;
+					float: left;
+					display: block;
+				}
+				#Fields_fields .EditableFormField a.addableOption,
+				#Fields_fields .EditableFormField a.addCondition {
+					background: url(../../cms/images/add.gif) no-repeat top left;
+					padding: 1px 0 2px 20px;
+					font-size: 12px;
+					width: auto;
+					margin-left: 3px;
+				}
+				/* Field Options Group */
+				#Fields_fields .fieldOptionsGroup {
+					padding: 4px 8px 8px 8px;
+					margin: 5px;
+					border: 1px solid #bbb;
+				}
+					#Fields_fields .fieldOptionsGroup legend {
+						font-size: 15px;
+						padding: 0 4px;
+					}
+				/* Field Lengths */
+				#Fields_fields .EditableFormField .fieldgroupField {
+					float: left;
+				}
+					#Fields_fields .EditableFormField .fieldgroupField label {
+						float: left;
+						padding: 0 4px;
+					}
+					#Fields_fields .EditableFormField .fieldgroupField input {
+						width: 80px;
+					}
+			#Fields_fields .EditableFormField .middleColumn {
+				background: none;
+			}
+			/* CHECKBOX */
+			#Fields_fields .EditableFormField .checkbox { }
+			
+				#Fields_fields .EditableFormField .checkbox input {
+					float: left;
+					width:auto;
+					margin: 0 8px 0 0;
+				}
+			
+		/* CUSTOM RULES */
+		#Fields_fields .customRules {
+			clear: both;
+		}
+			#Fields_fields .customRules li {
+				clear: both;
+			}
+				#Fields_fields .customRules li.firstField {
+					padding-bottom: 5px;
+					margin: 0 5px;
+					border-bottom: 1px solid #bbb;
+				}
+				#Fields_fields .customRules label {
+					float: left;
+					margin: 0;
+					padding: 2px 4px;
+					font-size: 11px;
+				}
+				#Fields_fields .customRules select {
+					float: left;
+					font-size: 11px;
+					width: 120px;
+					margin-right: 4px;
+				}
+				#Fields_fields .customRules a {
+					background: none;
+					width: 20px;
+					float: left;
+				}
+				
+		/* HIDE */
+		#Fields_fields li.EditableFormField .hidden {
+			display: none;
+		}
+
+		/* Holder to prevent form from collapsing */
+		#Fields_fields .removed-form-field {
+			height: 40px;
+			display: block;
+			overflow: hidden;
+		}

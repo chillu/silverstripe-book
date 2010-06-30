@@ -1,0 +1,30 @@
+{
+	"name": "jQuery-Array",
+	"version": 0.1,
+	"author": [
+		"John Resig <jeresig@gmail.com>",
+		"Paul McLanahan <pmclanahan@gmail.com>",
+		"Kenton Simpson"
+	],
+	"abstract": "A collection of jQuery plugins to make jQuery objects behave more like a JavaScript Array",
+	"license": "mit, gpl",
+	"distribution_type": "extension",
+	"requires": {
+		"jQuery": ">= 1.0, <= 1.2"
+	},
+	"provides": {
+		"jQuery.Array": {
+			"version": 0.2,
+			"file": "jquery.array.js"
+		}
+	},
+	"keywords": [
+		"array",
+		"JavaScript"
+	],
+	"meta-spec": {
+		"version": 1.3,
+		"url": "http://module-build.sourceforge.net/META-spec-v1.3.html"
+	},
+	"generated_by": "Yehuda Katz"
+}

@@ -1,0 +1,29 @@
+{
+	"name": "jQuery-Thickbox",
+	"version": 2.1,
+	"author": [
+		"Cody Lindley <contact@codylindley.com>"
+	],
+	"abstract": "jQuery plugin for displaying content in a box above the page.",
+	"license": "mit",
+	"distribution_type": "plugin",
+	"requires": {
+		"jQuery": ">= 1.0, < 1.2"
+	},
+	"provides": {
+		"jQuery.Thickbox": {
+			"version": 2.1,
+			"file": "thickbox-code/thickbox.js"
+		}
+	},
+	"keywords": [
+		"lightbox",
+		"widget"
+	],
+	"stability": "Official",
+	"meta-spec": {
+		"version": 1.3,
+		"url": "http://module-build.sourceforge.net/META-spec-v1.3.html"
+	},
+	"generated_by": "Yehuda Katz"
+}

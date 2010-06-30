@@ -1,0 +1,21 @@
+<script src="/src/jquery-latest.js"></script>    
+<script src="thickbox-code/thickbox.js"></script>
+<link rel="stylesheet" href="thickbox-code/thickbox.css" type="text/css" media="screen" />
+<script type="text/javascript">
+$(document).ready(function(){
+
+  var winW = window.innerWidth - 80 || document.body.offsetWidth - 100 || 630;
+  var winH = window.innerHeight - 80 || document.body.offsetHeight - 100 || 460;
+
+  $("a.thickbox").each(function(){
+    this.href += "&height=" + winH + "&width=" + winW;
+  });
+});
+</script>
+
+<ul>
+  <li><a href="http://google.com/?TB_iframe=true" title="Google" class="thickbox">Launch Google</a></li>
+  <li><a href="http://yahoo.com/?TB_iframe=true" title="Yahoo" class="thickbox">Visit Yahoo</a></li>
+  <li><a href="http://msn.com/?TB_iframe=true" class="thickbox">Microsoft would like a visit.</a></li>
+  <li><a href="http://jquery.com/?TB_iframe=true" class="thickbox">jQuery Rocks!</a></li>
+</ul>
