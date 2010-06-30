@@ -31,13 +31,12 @@ See `README.txt` in subfolders for installation instructions.
 
  * http://doc.silverstripe.org/server-requirements
  * SilverStripe 2.3.0 (not tested with any newer versions)
+ * PHP 5.2 (SilverStripe 2.3.0 doesn't work with 5.3 yet)
 
 ## Installation
 
-Each subfolder in this repository is effectively a SilverStripe webroot, 
-
- * Download and extract http://silverstripe.org/assets/downloads/SilverStripe-v2.3.0.tar.gz
- * Copy all files from a subfolder into the extracted SilverStripe 2
+Each subfolder in this repository is effectively a SilverStripe webroot. To install, simply copy `mysite/_config_example.php` to `mysite/_config.php` and adjust the database settings.
+IMPORTANT: Do NOT use the SilverStripe installer (`install.php`), as this will override your `_config.php`, removing any important preferences that might have been pre-set in there.
 
 ## FAQ
 
