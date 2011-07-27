@@ -62,7 +62,7 @@ Dependencies are managed with [http://piston.rubyforge.org](Piston), a small rub
 
 ### I've found a bug in the example code, where do I file it?
 
-We've got a [http://doc.silverstripe.org/silverstripe-book-errata](wiki page on doc.silverstripe.org) for general book errata, but preferrably bugs are filed as [http://github.com/chillu/silverstripe-book/issues](github issues).
+We've got a [https://github.com/chillu/silverstripe-book/wiki](wiki page ) for general book errata, but preferrably bugs are filed as [http://github.com/chillu/silverstripe-book/issues](github issues).
 
 ### I've found a bug in SilverStripe, where do I file it?
 
