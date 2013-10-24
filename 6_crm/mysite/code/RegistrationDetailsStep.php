@@ -1,7 +1,7 @@
 <?php
 class RegistrationDetailsStep extends MultiFormStep {
 
-	protected static $next_steps = 'RegistrationReferenceStep';
+	public static $next_steps = 'RegistrationReferenceStep';
 	
 	function getFields() {
 		$fields = singleton('Developer')->getFrontendFields();
